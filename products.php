@@ -1,43 +1,59 @@
 <?php
-$pageTitle = 'Ürünler ve Fiyatlar';
-$bodyClass = 'menu-page';
-require_once __DIR__ . '/includes/header.php';
-require_once __DIR__ . '/includes/products.php';
-?>
+declare(strict_types=1);
 
-<section class="menu-showcase py-5">
-    <div class="container">
-        <div class="menu-heading text-center mx-auto mb-5">
-            <p class="hero-kicker">Menü</p>
-            <h1>Ürünler ve Fiyatlar</h1>
-            <a class="btn btn-dark mt-3" href="order.php">Sipariş Ver</a>
-        </div>
+require_once __DIR__ . '/../config.php';
 
-        <?php foreach (grouped_products() as $category => $products): ?>
-            <div class="mb-5">
-                <div class="text-center mb-4">
-                    <h2 class="menu-category mb-0"><?= e($category) ?></h2>
-                </div>
-                <div class="row g-4">
-                    <?php foreach ($products as $product): ?>
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card product-card menu-card border-0 shadow-sm">
-                                <img class="product-photo" src="<?= e(product_image_path($product['name'])) ?>" alt="<?= e($product['name']) ?>">
-                                <div class="card-body d-flex flex-column">
-                                    <h3 class="h5 card-title"><?= e($product['name']) ?></h3>
-                                    <p class="card-text text-muted flex-grow-1"><?= e($product['description']) ?></p>
-                                    <div class="d-flex justify-content-between align-items-center gap-2">
-                                        <strong class="h5 price mb-0"><?= number_format((float) $product['price'], 0) ?> TL</strong>
-                                        <a class="btn btn-sm btn-dark" href="order.php?product_id=<?= (int) $product['id'] ?>">Seç</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</section>
+function bakery_products(): array
+{
+    $stmt = db()->query('SELECT id, name, category, description, price FROM products WHERE is_available = 1 ORDER BY category, name');
+    return $stmt->fetchAll();
+}
 
-<?php require_once __DIR__ . '/includes/footer.php'; ?>
+function find_product(int $productId): ?array
+{
+    $stmt = db()->prepare('SELECT id, name, category, description, price FROM products WHERE id = ? AND is_available = 1');
+    $stmt->execute([$productId]);
+    $product = $stmt->fetch();
+
+    return $product ?: null;
+}
+
+function grouped_products(): array
+{
+    $groups = [];
+
+    foreach (bakery_products() as $product) {
+        $groups[$product['category']][] = $product;
+    }
+
+    return $groups;
+}
+
+function product_image_path(string $productName): string
+{
+    // Ürün kartlarında doğru görseli göstermek için ürün adına göre eşleştirme yapıyorum.
+    $images = [
+        'Lemon Pie' => 'assets/images/lemon-pie.jpg',
+        'Limonlu Tart' => 'assets/images/lemon-pie.jpg',
+        'Dairy-Free Croissant' => 'assets/images/dairy-free-croissant.jpg',
+        'Süt Ürünsüz Kruvasan' => 'assets/images/dairy-free-croissant.jpg',
+        'Mille Feuille' => 'assets/images/millefeuille.jpg',
+        'Opera Cake' => 'assets/images/opera-cake.jpg',
+        'Opera Pasta' => 'assets/images/opera-cake.jpg',
+        'Carrot Cake' => 'assets/images/carrot-cake.jpg',
+        'Havuçlu Kek' => 'assets/images/carrot-cake.jpg',
+        'Banana Bread' => 'assets/images/banana-bread.jpg',
+        'Muzlu Ekmek' => 'assets/images/banana-bread.jpg',
+        'Vegan Chocolate Pie' => 'assets/images/vegan-choco-pie.jpg',
+        'Vegan Çikolatalı Tart' => 'assets/images/vegan-choco-pie.jpg',
+        'Madeleines' => 'assets/images/madeleine.jpg',
+        'Breadsticks' => 'assets/images/breadstick.jpg',
+        'Glutensiz Çubuk Ekmek' => 'assets/images/breadstick.jpg',
+        'Gluten-Free Cake' => 'assets/images/gluten-free-cake.jpg',
+        'Glutensiz Kek' => 'assets/images/gluten-free-cake.jpg',
+        'Gluten-Free Almond Cookies' => 'assets/images/almond-cookies.jpg',
+        'Glutensiz Bademli Kurabiye' => 'assets/images/almond-cookies.jpg',
+    ];
+
+    return $images[$productName] ?? 'assets/images/menu-background-bakery.jpg';
+}
