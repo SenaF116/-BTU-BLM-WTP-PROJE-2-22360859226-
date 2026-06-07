@@ -34,6 +34,12 @@ video linki:
 
 screenshots:
 
+![Sipariş Listesi](screenshots/screenshot-014651.png)
+
+![Sipariş Oluşturma](screenshots/screenshot-014717.png)
+
+![Profil / Giriş Durumu](screenshots/screenshot-014741.png)
+
 ![Ana Sayfa](screenshots/landing-reference.png)
 
 ![Giriş Ekranı](screenshots/login-page-background.jpg)
