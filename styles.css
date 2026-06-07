@@ -1,0 +1,328 @@
+body {
+    background: #fbf4ea;
+    color: #251b14;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.home-page {
+    background: #f4eee8;
+    padding: 1.1rem;
+}
+
+main {
+    min-height: calc(100vh - 65px);
+}
+
+.home-page main {
+    min-height: 0;
+}
+
+.home-page .navbar {
+    border: 0 !important;
+    border-radius: 1.25rem 1.25rem 0 0;
+    box-shadow: 0 10px 35px rgba(73, 44, 29, .08);
+    padding: 1.2rem 0;
+    position: static;
+}
+
+.navbar-brand {
+    color: #2b1d14;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.65rem;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.brand-mark {
+    color: #d89863;
+    font-size: 2.1rem;
+    line-height: 0;
+    vertical-align: -.1rem;
+}
+
+.navbar .nav-link {
+    color: #3a2821;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-inline: .4rem;
+}
+
+.navbar .nav-link.active {
+    color: #9d4f2e;
+    text-decoration: underline;
+    text-underline-offset: .45rem;
+}
+
+.btn-bakery {
+    background: #a45733;
+    border-color: #a45733;
+    color: #fff;
+    font-weight: 700;
+}
+
+.btn-bakery:hover {
+    background: #864125;
+    border-color: #864125;
+    color: #fff;
+}
+
+.btn-outline-bakery {
+    background: rgba(255, 255, 255, .48);
+    border-color: #a45733;
+    color: #7e3f25;
+    font-weight: 700;
+}
+
+.btn-outline-bakery:hover {
+    background: #a45733;
+    color: #fff;
+}
+
+.nav-link,
+.btn,
+.form-label,
+.table {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.classic-hero {
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(255, 248, 239, .92), rgba(255, 248, 239, .72) 42%, rgba(255, 248, 239, .18) 100%),
+        url('images/landing-page-bakery.jpg') center/cover;
+    border-top: 1px solid #ead8c8;
+    color: #3a2620;
+    display: flex;
+    min-height: 640px;
+    overflow: hidden;
+    padding: 4.5rem 0;
+}
+
+.hero-text-panel {
+    background: rgba(255, 252, 247, .72);
+    border: 1px solid rgba(194, 139, 100, .22);
+    border-radius: 1.2rem;
+    box-shadow: 0 24px 60px rgba(72, 43, 28, .12);
+    padding: clamp(2rem, 4vw, 3.5rem);
+    backdrop-filter: blur(3px);
+}
+
+.classic-hero h1,
+.menu-heading h1 {
+    font-size: clamp(3.8rem, 7vw, 6.5rem);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    text-transform: none;
+    text-shadow: none;
+}
+
+.hero-kicker {
+    color: #b96a43;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 1.05rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: .09em;
+    margin-bottom: 1.35rem;
+    text-transform: uppercase;
+}
+
+.hero-divider {
+    align-items: center;
+    display: flex;
+    height: 1px;
+    margin: .4rem 0 1.8rem;
+    width: 120px;
+}
+
+.hero-divider::before {
+    background: #c48762;
+    content: "";
+    height: 1px;
+    width: 86px;
+}
+
+.hero-divider::after {
+    color: #c48762;
+    content: "*";
+    font-size: 1.7rem;
+    line-height: 1;
+    margin-left: .75rem;
+}
+
+.hero-copy {
+    color: #5f5450;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    line-height: 1.55;
+    margin-bottom: 2rem;
+    max-width: 520px;
+}
+
+.hero {
+    background:
+        linear-gradient(rgba(43, 33, 24, .58), rgba(43, 33, 24, .40)),
+        url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80') center/cover;
+    color: #fff;
+    min-height: 58vh;
+    display: flex;
+    align-items: end;
+}
+
+.menu-page {
+    background:
+        linear-gradient(rgba(255, 249, 239, .42), rgba(255, 249, 239, .72)),
+        url('images/menu-background-bakery.jpg') center top/cover fixed;
+}
+
+.home-footer {
+    background: rgba(255, 252, 247, .94);
+    border-radius: 0 0 1.25rem 1.25rem;
+    border-top: 1px solid #e5d3c2;
+    box-shadow: 0 16px 42px rgba(73, 44, 29, .10);
+    color: #6a5547;
+    font-family: "Segoe UI", Arial, sans-serif;
+    padding: 2rem 0;
+}
+
+.footer-heart {
+    color: #a45733;
+    font-size: 1.5rem;
+}
+
+.footer-features {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.footer-features span {
+    color: #5b3c2d;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.footer-socials {
+    color: #9d4f2e;
+    display: flex;
+    gap: 1.35rem;
+    justify-content: flex-end;
+    font-weight: 700;
+}
+
+.order-page {
+    background:
+        linear-gradient(rgba(255, 249, 239, .42), rgba(255, 249, 239, .72)),
+        url('images/redirect-contact-page.jpg') center/cover fixed;
+}
+
+.auth-page {
+    background:
+        linear-gradient(rgba(255, 249, 239, .46), rgba(255, 249, 239, .76)),
+        url('images/login-page-background.jpg') center/cover fixed;
+}
+
+.menu-showcase {
+    background:
+        linear-gradient(rgba(255, 249, 239, .42), rgba(255, 249, 239, .72)),
+        url('images/menu-background-bakery.jpg') center top/cover fixed;
+    min-height: calc(100vh - 65px);
+}
+
+.order-page main,
+.auth-page main {
+    background: inherit;
+}
+
+.menu-heading {
+    max-width: 980px;
+}
+
+.menu-heading h1 {
+    color: #2b1d14;
+    font-size: clamp(3.1rem, 7vw, 6.7rem);
+    text-shadow: none;
+}
+
+.menu-category {
+    color: #3b2416;
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    font-style: italic;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.section-band {
+    background: #ffffff;
+}
+
+.product-card {
+    height: 100%;
+}
+
+.menu-card {
+    background: rgba(255, 252, 247, .94);
+    border-radius: .25rem;
+    overflow: hidden;
+}
+
+.product-photo {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    width: 100%;
+}
+
+.menu-card .card-title {
+    color: #2b1d14;
+    font-size: 1.55rem;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.menu-card .card-text {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.category-pill {
+    background: #f3dfc1;
+    color: #4f2f17;
+}
+
+.price {
+    color: #7a3f12;
+}
+
+.info-panel {
+    background: #fff;
+    border: 1px solid #ead6be;
+    border-radius: .5rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #a76127;
+    box-shadow: 0 0 0 .25rem rgba(167, 97, 39, .18);
+}
+
+@media (max-width: 991.98px) {
+    .classic-hero h1,
+    .menu-heading h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .home-page {
+        padding: 0;
+    }
+
+    .home-page .navbar,
+    .home-footer {
+        border-radius: 0;
+    }
+
+    .footer-features,
+    .footer-socials {
+        justify-content: flex-start;
+    }
+}
