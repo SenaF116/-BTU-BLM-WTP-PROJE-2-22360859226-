@@ -23,8 +23,8 @@ Bu proje, PHP + MySQL ile yapılmış basit bir pastane sipariş yönetimi uygul
 
 - Kayıt olun: `register.php` — en az 6 karakter şifre gereklidir.
 - Giriş yapın: `login.php` — başarılı giriş sonrası `orders.php` sayfasına yönlendirme.
-- Yeni sipariş vermek için `order.php` kullanın.
-- Siparişlerinizi `orders.php` sayfasında görebilir, düzenleyebilir veya silebilirsiniz.
+- Yeni sipariş vermek için `order.php` kullanılmis.
+- Siparişlerinizi `orders.php` sayfasında görebilir, düzenleyebilir veya silebilir.
 - Parolalar `password_hash()` ile saklanır.
 - Oturum kontrolü `$_SESSION` ile yapılır.
 
