@@ -28,9 +28,9 @@ Bu proje, PHP + MySQL ile yapılmış basit bir pastane sipariş yönetimi uygul
 - Parolalar `password_hash()` ile saklanır.
 - Oturum kontrolü `$_SESSION` ile yapılır.
 
-video linki:
+WEB SAYFASI LINKI: http://95.130.171.20/~st22360859226/index.php
 
-video linki:
+video linki:https://www.youtube.com/watch?v=pT49K5SILiw
 
 screenshots:
 
